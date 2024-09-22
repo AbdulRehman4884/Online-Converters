@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Image-Resize</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: BizLand
+  * Updated: Jan 09 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/bizland-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">arkm684@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+92 309 4123966</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="/home">Online-Tools<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          
+          <li class="dropdown"><a href="#"><span>Tools</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/Imageresize">IMAGE RESIZER</a></li>
+              <li><a href="/pdfsplitter">PDF SPLITTER</a></li>
+              <li><a href="/htmlscraper">HTML SCRAPPER</a></li>
+              <li><a href="/Powerpoint">PPT IMAGE EXTRACTOR </a></li>
+              <li><a href="/mergepdf">PDF MERGER</a></li>
+              <li><a href="/watermark">PDF WATERMARK</a></li>
+              <li><a href="/TextManipulator">TEXT MANIPULATOR</a></li>
+              <li><a href="/extractimage">PDF IMAGE EXTRACTOR</a></li>
+              <li><a href="/TiffConverter">TIFF to PDF Converter</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main" data-aos="fade-up">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2> Image Resizer</h2>
+          <ol>
+            <li><a href="/home">Home</a></li>
+            <li>Image Resizer</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page" style="padding: 30px;">
+      <div class="container py-4">
+          <div class="row">
+              <div class="col-lg-12">
+                  <form action="/resizeImage" method="post" enctype="multipart/form-data" class="Tool-section">
+                      <div th:if="${error}" class="error-message">
+                          <p th:text="${error}"></p>
+                      </div>
+                      <h2 class="Tool-heading">Image Resizer</h2>
+                      <div class="form-group">
+                          <label for="imageFile" class="form-label">Select an image file:</label>
+                          <input type="file" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png" class="form-control" required>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="width">Width:</label>
+                                  <input type="number" id="width" name="width" class="form-control">
+                              </div>
+                              <br>
+                              <div class="form-group">
+                                  <label for="height">Height:</label>
+                                  <input type="number" id="height" name="height" class="form-control">
+                              </div>
+                              <br>
+                              <div class="form-group" style="padding-top: 10px;">
+                                  <label for="format">Select Output Format:</label>
+                                  <select id="format" name="format" class="form-select">
+                                      <option value="jpg">JPG</option>
+                                      <option value="png">PNG</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="quality">Quality:</label>
+                                  <input type="number" id="quality" name="quality" step="0.01" class="form-control">
+                              </div>
+                              <br>
+                              <br>
+                              <div class="form-group">
+                                  <label for="aspectRatio">Maintain Aspect Ratio:</label>
+                                  <input type="checkbox" id="aspectRatio" name="aspectRatio" value="true" class="form-check-input">
+                              </div>
+                              <br>
+                              <br>
+                              <div class="form-group">
+                                  <label for="scale">Scale Factor:</label>
+                                  <input type="number" id="scale" name="scale" step="0.01" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                      <br>
+                      
+                      <div style="display: flex ; justify-content: center; ">
+                      <button type="submit" class="btn btn-primary"  >Resize Image</button>
+                    </div>
+                    <br>
+                  </form>
+                  <div th:if="${resizedImageBase64}" class="image-preview">
+                      <p>Resized Image Preview:</p>
+                      <img th:src="'data:image/' + ${format} + ';base64,' + ${resizedImageBase64}">
+                      <br>
+                      <a th:href="@{'/downloadImage?format=' + ${format}}" th:download="'resized_image.' + ${format}" class="btn btn-primary mt-3">Download Resized Image</a>
+                  </div>
+              </div>
+              <div class="col-lg-12">
+                  <div class="Tool-exp">
+                      <div class="Tool-heading">
+                          <h3>Introducing our Image Resizer: Your Go-To Tool for Perfect Images!</h3>
+                      </div>
+                      <p>
+                          Are your images too large for your needs? Struggling to get the perfect dimensions for your visuals? Look no further! Our online Image Resizer is your secret weapon for effortlessly resizing and optimizing your images with ease.
+                      </p>
+                      <h3>Key Features:</h3>
+                      <ul>
+                          <li>Choose Any File: Our tool accepts a wide range of image formats, so whether it's a high-quality JPEG, a crisp PNG, or even a standard JPG, you're covered!</li>
+                          <li>Specify Width & Height: Precision is key! Tailor your image to the exact dimensions you desire. Just input the width and height, and watch your image transform.</li>
+                          <li>Quality Control: Maintain image clarity with our quality adjustment feature. Fine-tune the quality with precision using step-by-step increments.</li>
+                          <li>Aspect Ratio Magic: Worried about distortion? Don't be! Our tool lets you lock the aspect ratio, ensuring your image stays perfectly proportioned during resizing.</li>
+                          <li>Output Format: Choose your preferred output format. Stick with the classic JPG or go for a crystal-clear PNG – the choice is yours.</li>
+                          <li>Scale Factor: Need a quick change? Scale your image up or down with a breeze. Adjust with a scale factor for the perfect size.</li>
+                      </ul>
+                      <p>With our Image Resizer, the power to resize and enhance your images is in your hands. Whether you're working on web design, social media, or just need a quick adjustment, our tool is here to make your life easier.</p>
+                      <h3>Efficiency and simplicity combined – transform your images effortlessly today and experience the magic of managing your visuals like never before!</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="footer-top" >
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>OnlineTools<span>.</span></h3>
+            <p>
+              COMSATS University<br>
+              Lahore,<br>
+              Pakistan <br><br>
+              <strong>Phone:</strong> +92 309 4123966<br>
+              <strong>Email:</strong> arkm684@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/Imageresize">IMAGE RESIZER</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/PDFsplitter">PDF SPLITTER</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/htmlscraper">HTML SCRAPPER</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/Powerpoint">PPT IMAGE EXTRACTOR</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/mergepdf">PDF MERGER</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/watermark">PDF WATERMARK</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/TextManipulator">TEXT MANIPULATOR</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/extractimage">PDF IMAGE EXTRACTOR</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/TiffConverter">TIFF to PDF Converter</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+           
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
